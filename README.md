@@ -8,7 +8,9 @@ Add the following to your `Package.swift`:
 
 ```swift
 .package(url: "https://github.com/Kirilovep/HapticClient", from: "1.0.0")
-
+```
+Add the dependency to any targets you've declared in your manifest:
+```swift
 .target(
     name: "YourApp",
     dependencies: [
