@@ -14,20 +14,22 @@ let package = Package(
     products: [
         .library(
             name: "HapticClient",
-            targets: ["Core"]
+            targets: ["HapticClient"]
         ),
         .library(
             name: "HapticClientSwiftUI",
-            targets: ["SwiftUISupport"]
+            targets: ["HapticClientSwiftUI"]
         ),
     ],
     targets: [
         .target(
-            name: "Core"
+            name: "HapticClient",
+            path: "Sources/Core"
         ),
         .target(
-            name: "SwiftUISupport",
-            dependencies: ["Core"]
+            name: "HapticClientSwiftUI",
+            dependencies: ["HapticClient"],
+            path: "Sources/SwiftUISupport",
         ),
     ]
 )
