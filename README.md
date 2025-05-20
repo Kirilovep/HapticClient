@@ -15,11 +15,28 @@ Add the dependency to any targets you've declared in your manifest:
 .target(
     name: "YourApp",
     dependencies: [
-        .product(name: "HapticClient", package: "HapticClient"),
-        .product(name: "HapticClientSwiftUI", package: "HapticClient"), // for SwiftUI support
+        .product(name: "HapticClient", package: "HapticClient")
     ]
 )
 
+```
+Add the `HapticClientSwiftUI` to support SwiftUI:
+```swift
+.target(
+    name: "YourApp",
+    dependencies: [
+        .product(name: "HapticClientSwiftUI", package: "HapticClient"
+    ]
+)
+```
+Add the `HapticClientDependencies` to support [swift-dependencies](https://github.com/pointfreeco/swift-dependencies):
+```swift
+.target(
+    name: "YourApp",
+    dependencies: [
+        .product(name: "HapticClientDependencies", package: "HapticClient"
+    ]
+)
 ```
 ## ✨ Usage
 
@@ -27,6 +44,16 @@ Add the dependency to any targets you've declared in your manifest:
 import HapticClient
 
 let haptic = HapticClient()
+haptic.vibrate(.feedbackType(.success))
+haptic.vibrate(.feedbackStyle(.medium))
+haptic.vibrate(.selection)
+```
+## Swift-dependencies
+```swift
+import HapticClientDependencies
+
+@Dependency(\.hapticClient) var hapticClient
+
 haptic.vibrate(.feedbackType(.success))
 haptic.vibrate(.feedbackStyle(.medium))
 haptic.vibrate(.selection)
