@@ -20,6 +20,16 @@ let package = Package(
             name: "HapticClientSwiftUI",
             targets: ["HapticClientSwiftUI"]
         ),
+        .library(
+            name: "HapticClientDependencies",
+            targets: ["HapticClientDependencies"]
+        ),
+    ],
+    dependencies: [
+        .package(
+            url: "https://github.com/pointfreeco/swift-dependencies",
+            from: "1.0.0"
+        )
     ],
     targets: [
         .target(
@@ -31,5 +41,17 @@ let package = Package(
             dependencies: ["HapticClient"],
             path: "Sources/SwiftUISupport",
         ),
-    ]
+        .target(
+            name: "HapticClientDependencies",
+            dependencies: [
+                "HapticClient",
+                .product(
+                    name: "Dependencies",
+                    package: "swift-dependencies"
+                ),
+            ],
+            path: "Sources/DependenciesSupport"
+        )
+    ],
+    swiftLanguageModes: [.v6]
 )
