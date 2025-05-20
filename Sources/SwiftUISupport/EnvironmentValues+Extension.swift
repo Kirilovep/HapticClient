@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Core
+import HapticClient
 
 private struct HapticClientKey: EnvironmentKey {
     static let defaultValue: HapticClient = HapticClient()
