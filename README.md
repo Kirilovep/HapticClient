@@ -74,3 +74,9 @@ This makes `HapticClient` easily accessible with `@Environment`.
 
 ## 👨‍💻 Author
 https://github.com/Kirilovep
+
+## Contributing
+Contributions are always welcome! Feel free to submit a pull request or open an issue for any suggestions or improvements you have.
+
+## License
+HapticsClient is licensed under the MIT License. See the LICENCE file for more details.
