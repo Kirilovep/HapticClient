@@ -39,7 +39,7 @@ let package = Package(
         .target(
             name: "HapticClientSwiftUI",
             dependencies: ["HapticClient"],
-            path: "Sources/SwiftUISupport",
+            path: "Sources/SwiftUISupport"
         ),
         .target(
             name: "HapticClientDependencies",
